@@ -1,8 +1,8 @@
 package com.vermisse.boot;
 
+import org.mybatis.spring.annotation.*;
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
-import org.springframework.boot.context.embedded.*;
 import org.springframework.context.annotation.*;
 import org.springframework.scheduling.annotation.*;
 
@@ -12,16 +12,11 @@ import org.springframework.scheduling.annotation.*;
 @EnableAutoConfiguration
 // 开启定时器
 @EnableScheduling
-public class Application implements EmbeddedServletContainerCustomizer {
+//扫描Dao接口所在包，如果有多个用逗号隔开
+@MapperScan("com.vermisse.boot.dao")
+public class Application {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
-	}
-	
-	/**
-	 * 设置服务器启动端口
-	 */
-	public void customize(ConfigurableEmbeddedServletContainer container) {
-		container.setPort(99);
 	}
 }

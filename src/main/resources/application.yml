@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    driverClassName: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/mysql
+    username: root
+    password: 123456
+
+mybatis:
+  mapper-locations: classpath*:com/vermisse/boot/dao/**/*.xml

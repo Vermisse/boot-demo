@@ -13,7 +13,7 @@ public class DemoAction {
 	@Autowired
 	private DemoService service;
 	
-	@RequestMapping("/")
+	@GetMapping("/")
 	String index(Model model) {
 		model.addAttribute("user", service.getUser());
 		return "demo";

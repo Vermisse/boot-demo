@@ -9,7 +9,7 @@ import org.springframework.stereotype.*;
 @Component
 public class QuartzDemo {
 
-	@Scheduled(cron = "0/3 * * * * ?")
+	@Scheduled(cron = "0/10 * * * * ?")
 	public void current() {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 		System.out.println("定时器执行：" + sdf.format(new Date()));
